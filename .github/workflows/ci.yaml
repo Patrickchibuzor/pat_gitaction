@@ -1,0 +1,15 @@
+name: CI with Reusable Workflow
+
+on:
+    push:
+      branches:
+        - '**' # Matches any branch
+  
+
+jobs:
+  ci:
+    uses: https://github.com/Patrickchibuzor/ci_gitaction.git/.github/workflows/reuseable_cicd.yaml@main
+    with:
+      python-version: '3.9'
+      dependencies: '-r requirements.txt'
+      test-command: 'pytest'
